@@ -13,8 +13,9 @@
                     VerticalOptions="CenterAndExpand" />
                 <Label
                     HorizontalOptions="CenterAndExpand"
-                    Text="{Binding bgReading}"
-                    VerticalOptions="EndAndExpand" />
+                    FontSize="Large"
+                    Text="{Binding BgReading}"
+                    VerticalOptions="CenterAndExpand" />
             </StackLayout>
         </ContentPage>
     </Application.MainPage>

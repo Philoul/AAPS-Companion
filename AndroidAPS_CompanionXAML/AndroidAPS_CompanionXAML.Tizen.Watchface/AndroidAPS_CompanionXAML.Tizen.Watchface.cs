@@ -8,14 +8,12 @@ namespace AndroidAPS_CompanionXAML.Tizen.Watchface
     class Program : FormsWatchface
     {
         ClockViewModel _viewModel;
-        BroadcastReceiver broadcastReceiver;
 
         protected override void OnCreate()
         {
             base.OnCreate();
             var watchfaceApp = new TextWatchApplication();
             _viewModel = new ClockViewModel();
-            broadcastReceiver = new BroadcastReceiver();
             watchfaceApp.BindingContext = _viewModel;
             LoadWatchface(watchfaceApp);
         }

@@ -70,6 +70,7 @@ namespace AndroidAPS_CompanionXAML
 
         private void Broadcast()
         {
+            Tizen.Log.Debug(TAG, "sending broadcast...");
             broadcaster.SendMessage("144", "16:15", "upwards");
         }
 

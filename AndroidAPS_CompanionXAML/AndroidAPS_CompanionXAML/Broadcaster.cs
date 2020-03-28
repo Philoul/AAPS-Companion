@@ -34,12 +34,13 @@ namespace AndroidAPS_CompanionXAML
             //bundle.AddItem("direction", direction);
             try
             {
-                MessagePort messagePort = new MessagePort("bg_reading_port", true);
+                MessagePort messagePort = new MessagePort("SenderPort", true);
                 using (var message = new Bundle())
                 {
-                    message.AddItem("message", "a_string");
+                    message.AddItem("value", "144");
+                    message.AddItem("time", "1585393739");
                     messagePort.Listen();
-                    messagePort.Send(message, "AndroidAPS_CompanionXAML.Tizen.Watchface", "bg_reading_port");
+                    messagePort.Send(message, "org.tizen.example.AndroidAPS_CompanionXAML.Tizen.Watchface", "receiverPort");
                 }
             }
             catch(Exception e)
