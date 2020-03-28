@@ -1,6 +1,5 @@
 ﻿<Project Sdk="Tizen.NET.Sdk/1.0.3">
 
-  <!-- Property Group for Tizen40 Project -->
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>tizen40</TargetFramework>
@@ -20,17 +19,11 @@
   <ItemGroup>
     <PackageReference Include="NETStandard.Library" Version="2.0.3" />
     <PackageReference Include="Samsung.Sap" Version="1.0.0" />
-    <PackageReference Include="System.Text.Json" Version="4.7.1" />
     <PackageReference Include="Tizen.NET.API5" Version="5.0.0.14639" />
     <PackageReference Include="Tizen.NET.API6" Version="6.0.0.15092" />
     <PackageReference Include="Tizen.Wearable.CircularUI" Version="1.4.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.356" />
   </ItemGroup>
 
-  
-  <ItemGroup>
-    <ProjectReference Include="..\AndroidAPS_CompanionXAML\AndroidAPS_CompanionXAML.csproj" />
-  </ItemGroup>
-  
-
 </Project>
+

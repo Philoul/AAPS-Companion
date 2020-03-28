@@ -8,11 +8,14 @@ using System.Linq;
 using System.Diagnostics;
 using Tizen.Wearable.CircularUI.Forms;
 using System.Text.Json;
+using Tizen.Applications;
+using Tizen.Applications.Messages;
 
 namespace AndroidAPS_CompanionXAML
 {
     public class MainPageViewModel : INotifyPropertyChanged
     {
+        private Broadcaster broadcaster;
         private Agent agent;
         private Connection connection;
         private Peer peer;
@@ -20,7 +23,20 @@ namespace AndroidAPS_CompanionXAML
 
         public MainPageViewModel()
         {
-            ConnectCommand = new Command(Connect);
+            broadcaster = new Broadcaster();
+            ConnectCommand = new Command(Broadcast);
+            //agent = Agent.GetAgent("/androidaps/tizen/app", onConnect: OnConnect).Result;
+        }
+
+        private bool OnConnect(Connection connection)
+        {
+            Tizen.Log.Debug(TAG, "OnConnect");
+            this.connection = connection;
+            connection.StatusChanged -= Connection_StatusChanged;
+            connection.StatusChanged += Connection_StatusChanged;
+            connection.DataReceived -= Connection_DataReceived;
+            connection.DataReceived += Connection_DataReceived;
+            return true;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -51,6 +67,11 @@ namespace AndroidAPS_CompanionXAML
         }
 
         public Command ConnectCommand { get; set; }
+
+        private void Broadcast()
+        {
+            broadcaster.SendMessage("144", "16:15", "upwards");
+        }
 
         private async void Connect()
         {

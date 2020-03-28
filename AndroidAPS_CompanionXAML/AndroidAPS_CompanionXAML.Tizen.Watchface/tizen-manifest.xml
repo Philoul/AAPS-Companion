@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest package="org.tizen.example.AndroidAPS_CompanionXAML.Tizen.Watchface" version="1.0.0" api-version="4" xmlns="http://tizen.org/ns/packages">
+    <profile name="wearable" />
+    <watch-application appid="org.tizen.example.AndroidAPS_CompanionXAML.Tizen.Watchface" exec="AndroidAPS_CompanionXAML.Tizen.Watchface.dll" type="dotnet" ambient-support="false">
+        <label>AndroidAPS_CompanionXAML.Tizen.Watchface</label>
+        <icon>AndroidAPS_CompanionXAML.Tizen.Watchface.png</icon>
+        <metadata key="http://tizen.org/metadata/prefer_dotnet_aot" value="true" />
+        <splash-screens />
+    </watch-application>
+    <shortcut-list />
+    <privileges>
+        <privilege>http://tizen.org/privilege/alarm.set</privilege>
+        <privilege>http://tizen.org/privilege/datasharing</privilege>
+        <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+    </privileges>
+    <provides-appdefined-privileges />
+</manifest>
